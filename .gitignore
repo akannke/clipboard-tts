@@ -1,0 +1,38 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyo
+*.pyd
+
+# 仮想環境関連
+.venv/
+.env/
+venv/
+ENV/
+env.bak/
+*.env
+
+# Pythonバージョン管理ファイル
+# .python-version
+
+# WAVファイル
+*.wav
+
+# 編集用に生成されたファイルやログなど
+*.log
+*.bak
+*.swp
+
+# 要件ファイル（インストール後の依存関係キャッシュなど）
+pip-log.txt
+pip-delete-this-directory.txt
+
+# macOS関連
+.DS_Store
+
+# その他不要なファイル
+*.tmp
+*.temp
