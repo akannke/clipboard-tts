@@ -2,6 +2,7 @@ import pyperclip
 import time
 from TTS.api import TTS
 from playsound import playsound
+import re
 
 # TTSモデルをロード
 tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC", progress_bar=False, gpu=False)
@@ -13,6 +14,9 @@ while True:
     try:
         # 現在のクリップボードの内容を取得
         current_text = pyperclip.paste()
+
+        # 特殊文字を除外（通常の英語表現で使用する記号は残す）
+        current_text = re.sub(r"[^\w\s'.,!?;:()-]", '', current_text)
 
         # クリップボードの内容が変更された場合
         if current_text != previous_text:
