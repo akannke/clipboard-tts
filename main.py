@@ -20,12 +20,15 @@ while True:
 
             # テキストが空でなく、1単語のみの場合に対処
             if current_text and len(current_text.split()) > 1:
-                # テキストを音声に変換して保存
-                tts.tts_to_file(text=current_text, file_path="output.wav")
-                print("Text from clipboard was converted to speech and saved as 'output.wav'.")
+                try: 
+                    # テキストを音声に変換して保存
+                    tts.tts_to_file(text=current_text, file_path="output.wav")
+                    print("Text from clipboard was converted to speech and saved as 'output.wav'.")
 
-                # 音声ファイルを再生
-                playsound("output.wav")
+                    # 音声ファイルを再生
+                    playsound("output.wav")
+                except Exception as e:
+                    print(f"Error during TTS conversion or playback: {e}")
             elif len(current_text.split()) == 1:
                 print("Single word detected. Skipping TTS conversion to avoid repetition.")
             else:
